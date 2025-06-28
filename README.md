@@ -58,7 +58,7 @@
 
 > 📌 Below is an example of the `SendLLMRequest` node setup in Blueprint:
 
-![LLM Node Blueprint Example](images/node_example.png)
+![LLM Node Blueprint Example](/node_example.png)
 
 > 🖼️ Add your image to `/images/node_example.png` in the repo.
 
