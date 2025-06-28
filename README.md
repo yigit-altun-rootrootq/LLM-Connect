@@ -1,6 +1,6 @@
 # 🤖 LLM_Connect Plugin for Unreal Engine
 
-**LLM_Connect** is a powerful yet lightweight Unreal Engine plugin designed to connect your Blueprints with top-tier Large Language Models (LLMs) like OpenAI's GPT, Google's Gemini, Claude, DeepSeek, and local Ollama models. It enables seamless communication using a single Blueprint node — no C++ required.
+**LLM_Connect** is a powerful yet lightweight Unreal Engine plugin designed to connect your Blueprints with top-tier Large Language Models (LLMs) like OpenAI's GPT, Google's Gemini, Claude, DeepSeek, and  Ollama models. It enables seamless communication using a single Blueprint node — no C++ required.
 
 ---
 
@@ -12,7 +12,7 @@
   - OpenAI **GPT**
   - **Claude** by Anthropic
   - **DeepSeek**
-  - Local **Ollama** models
+  - **Ollama** models
 - 🔹 **Dropdown Model Selection**
 - 🔹 **API Key, Prompt, Model Name and Server Input**
 - 🔹 **Streaming Parsing Support** (Ollama)
@@ -47,7 +47,7 @@
 | **API Key** | String | Your LLM API key (not required for Ollama) |
 | **Prompt** | String | Input prompt/question for the model |
 | **Model** | String | Model ID (e.g., `gpt-4`, `claude-opus`, etc.) |
-| **Server IP:Port** | String | For Ollama – local server endpoint |
+| **Server IP:Port** | String | For Ollama – server endpoint |
 | **Max Tokens** | Int | (Claude) Optional token cap |
 | **OnSuccess** | Output | Event triggered on valid response |
 | **Result** | String | Parsed AI response content |
