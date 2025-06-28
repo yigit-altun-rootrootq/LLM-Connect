@@ -1,2 +1,83 @@
-# LLM-Connect
-LLM Connect is a Blueprint-ready Unreal Engine plugin that links to LLMs like GPT, Gemini, Claude, and Ollama. Send prompts, get responses, stream outputs, and switch models via dropdown. Easily integrate AI into gameplay, tools, or logic—local or cloud-based, all in one node.
+# 🤖 LLM_Connect Plugin for Unreal Engine
+
+**LLM_Connect** is a powerful yet lightweight Unreal Engine plugin designed to connect your Blueprints with top-tier Large Language Models (LLMs) like OpenAI's GPT, Google's Gemini, Claude, DeepSeek, and local Ollama models. It enables seamless communication using a single Blueprint node — no C++ required.
+
+---
+
+## ✨ Features
+
+- 🔹 **Unified Blueprint Node** – Send prompts and receive responses easily.
+- 🔹 **Multiple LLM Support**:
+  - Google **Gemini**
+  - OpenAI **GPT**
+  - **Claude** by Anthropic
+  - **DeepSeek**
+  - Local **Ollama** models
+- 🔹 **Dropdown Model Selection**
+- 🔹 **API Key, Prompt, Model Name and Server Input**
+- 🔹 **Streaming Parsing Support** (Ollama)
+- 🔹 **Text-only Smart Extraction**
+
+---
+
+## 🎮 Use Cases
+
+- AI-powered NPC conversations
+- Dynamic quest generation
+- Developer tools powered by LLMs
+- Text-to-text generation, summarization, or scripting logic
+
+---
+
+## 📦 Installation
+
+1. Place the plugin in your UE project’s `Plugins/` folder.
+2. Regenerate project files and build.
+3. Enable it from `Edit > Plugins > LLM_Connect`.
+
+---
+
+## 🧠 How It Works
+
+### 🔷 Blueprint Node: `SendLLMRequest`
+
+| Pin | Type | Description |
+|-----|------|-------------|
+| **LLM Type** | Enum | Select from GPT, Gemini, Claude, etc. |
+| **API Key** | String | Your LLM API key (not required for Ollama) |
+| **Prompt** | String | Input prompt/question for the model |
+| **Model** | String | Model ID (e.g., `gpt-4`, `claude-opus`, etc.) |
+| **Server IP:Port** | String | For Ollama – local server endpoint |
+| **Max Tokens** | Int | (Claude) Optional token cap |
+| **OnSuccess** | Output | Event triggered on valid response |
+| **Result** | String | Parsed AI response content |
+
+---
+
+## 🧩 Blueprint Example
+
+> 📌 Below is an example of the `SendLLMRequest` node setup in Blueprint:
+
+![LLM Node Blueprint Example](images/node_example.png)
+
+> 🖼️ Add your image to `/images/node_example.png` in the repo.
+
+---
+
+## 💼 Purchase
+
+This plugin is available for purchase on **fab**.  
+➡️ **[Buy Now on Fab](https://your-fab-page-link.com)**
+
+---
+
+## 📜 License
+
+MIT License – free to use, modify, and include in commercial projects.
+
+---
+
+## 🙌 Created by
+
+**rootROOQ**  
+Made for creators who want to power Unreal Engine with modern LLMs.
