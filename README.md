@@ -60,14 +60,13 @@
 
 ![LLM Node Blueprint Example](/node_example.png)
 
-> 🖼️ Add your image to `/images/node_example.png` in the repo.
 
 ---
 
 ## 💼 Purchase
 
 This plugin is available for purchase on **fab**.  
-➡️ **[Buy Now on Fab](https://your-fab-page-link.com)**
+➡️ **[Buy Now on Fab](https://www.fab.com/sellers/rootrootQ)**
 
 ---
 
