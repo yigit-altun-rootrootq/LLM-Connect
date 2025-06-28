@@ -70,13 +70,8 @@ This plugin is available for purchase on **fab**.
 
 ---
 
-## 📜 License
-
-MIT License – free to use, modify, and include in commercial projects.
-
----
 
 ## 🙌 Created by
 
-**rootROOQ**  
-Made for creators who want to power Unreal Engine with modern LLMs.
+**rootrootQ**  
+
