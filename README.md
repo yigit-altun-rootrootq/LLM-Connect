@@ -119,19 +119,6 @@ For updates, tutorials, and support, visit my [YouTube channel @rootrootQ](https
 
 ---
 
-## 📄 Changelog
-
-- **v1.0.0**:
-  - Initial release with support for GPT, Gemini, Claude, DeepSeek, and Ollama models.
-  - Added Blueprint node for sending requests and receiving responses.
-  - Streaming support for Ollama models.
-  
-- **v1.1.0**:
-  - Added support for model dropdown selection.
-  - Improved error handling for missing API keys.
-
----
-
 ## ❓ FAQ
 
 - **How do I get an API key for GPT, Gemini, or Claude?**
