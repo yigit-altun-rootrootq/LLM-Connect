@@ -1,113 +1,125 @@
-# 🤖 LLM\_Connect Plugin for Unreal Engine
+🤖 LLM_Connect Plugin for Unreal Engine
+LLM_Connect is a powerful Unreal Engine plugin that enables seamless integration with Large Language Models (LLMs) via Blueprints. It supports OpenAI (GPT), Google Gemini, Anthropic Claude, DeepSeek, Ollama (local or remote), and LM Studio — all through a unified Blueprint node. You can send prompts and receive streamed or full responses in real time. No C++ coding is required.
 
-**LLM\_Connect** is a powerful Unreal Engine plugin that enables seamless integration with Large Language Models (LLMs) via Blueprints. It supports **OpenAI (GPT)**, **Google Gemini**, **Anthropic Claude**, **DeepSeek**, and **Ollama (local or remote)** — all through a unified Blueprint node. You can send prompts and receive streamed or full responses in real time. No C++ coding is required.
+✨ Features
+🔹 Unified Blueprint Node: Communicate with multiple LLMs using a single Blueprint node.
 
----
+🔹 Multi-LLM Support: Easily connect to popular models:
 
-## ✨ Features
+OpenAI GPT
 
-* 🔹 **Unified Blueprint Node**: Communicate with multiple LLMs using a single Blueprint node.
-* 🔹 **Multi-LLM Support**: Easily connect to popular models:
+Google Gemini
 
-  * OpenAI **GPT**
-  * Google **Gemini**
-  * **Claude** by Anthropic
-  * **DeepSeek**
-  * **Ollama** (local models)
-* 🔹 **Dropdown Model Selection**: Choose from supported model names.
-* 🔹 **Flexible Input**: Configure API Key, Prompt, Model Name, Server IP/Port, and more.
-* 🔹 **Streaming Parsing**: Supports streamed output (Ollama).
-* 🔹 **Text-only Smart Extraction**: Auto-extract meaningful responses from LLMs.
+Claude by Anthropic
 
----
+DeepSeek
 
-## 🏦 1. Installation (via Fab Marketplace)
+Ollama (local models)
 
-1. Go to the **Fab Marketplace**.
-2. Search for **LLM Connect**.
-3. Purchase or add it to your Library.
-4. Open the **Epic Games Launcher**, go to the **Library**, and install it to your Engine or Project.
+LM Studio (local or remote models)
 
----
+🔹 Dropdown Model Selection: Choose from supported model names.
 
-## 📚 2. Adding to Your Unreal Project
+🔹 Flexible Input: Configure API Key, Prompt, Model Name, Server IP/Port, and more.
 
-1. Open your Unreal project.
-2. Go to `Edit → Plugins`.
-3. Find **LLM Connect** under Installed and enable it.
-4. Restart the project when prompted.
+🔹 Streaming Parsing: Supports streamed output (Ollama).
 
----
+🔹 Text-only Smart Extraction: Auto-extract meaningful responses from LLMs.
 
-## 🤖 3. Using the Plugin (Blueprint Only)
+🏦 1. Installation (via Fab Marketplace)
+Go to the Fab Marketplace.
 
-1. Open any Blueprint (e.g., Level Blueprint, Actor Blueprint).
-2. Right-click in the Event Graph and search for `LLM Connect`.
-3. Select the node: **LLM Connect – Unified LLM Request**.
+Search for LLM Connect.
 
----
+Purchase or add it to your Library.
 
-## ⚛️ 4. Node Pin Reference
+Open the Epic Games Launcher, go to the Library, and install it to your Engine or Project.
 
-| Pin                      | Type    | Description                                                                                                                                                                                                                                                                      |
-| ------------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Model Type**           | Enum    | Select the LLM service:<br>• GPT (OpenAI)<br>• Gemini (Google)<br>• Claude (Anthropic)<br>• DeepSeek<br>• Ollama (local)                                                                                                                                                         |
-| **Model**                | String  | The model to use.<br>*Examples*:<br>• `gpt-4`, `gpt-3.5-turbo` (GPT)<br>• `gemini-pro`, `gemini-1.5-flash`, `gemini-1.5-pro` (Gemini)<br>• `claude-3-opus`, `claude-3-sonnet` (Claude)<br>• `deepseek-chat`, `deepseek-coder` (DeepSeek)<br>• `llama3`, `mistral`, etc. (Ollama) |
-| **API Key**              | String  | API key required for GPT, Gemini, Claude, and DeepSeek.                                                                                                                                                                                                                          |
-| **Prompt**               | String  | The question to send to the LLM.                                                                                                                                                                                                                                                 |
-| **Server IP/Port**       | String  | For Ollama only. Example: `http://localhost:11434`.                                                                                                                                                                                                                              |
-| **Max Tokens**           | Integer | Used with Claude to limit response length.                                                                                                                                                                                                                                       |
-| **Temperature**          | Float   | (0.0 to 1.0) Controls randomness.                                                                                                                                                                                                                                                |
-| **System Prompt**        | String  | Optional role description (e.g., "You are a helpful assistant.").                                                                                                                                                                                                                |
-| **On Success**           | Exec    | Triggered when a response is received.                                                                                                                                                                                                                                           |
-| **Response Text**        | String  | The LLM's returned message.                                                                                                                                                                                                                                                      |
-| **Standard Exec Output** | Exec    | Normal flow output.                                                                                                                                                                                                                                                              |
+📚 2. Adding to Your Unreal Project
+Open your Unreal project.
 
----
+Go to Edit → Plugins.
 
-## 📈 5. API Behavior Table
+Find LLM Connect under Installed and enable it.
 
-| Model    | Requires API Key | Needs Server | Notes                                      |
-| -------- | ---------------- | ------------ | ------------------------------------------ |
-| GPT      | ✅ Yes            | ❌ No         | e.g., `gpt-3.5-turbo`, `gpt-4`             |
-| Gemini   | ✅ Yes            | ❌ No         | e.g., `gemini-1.5-flash`, `gemini-1.5-pro` |
-| Claude   | ✅ Yes            | ❌ No         | Needs `Max Tokens`                         |
-| DeepSeek | ✅ Yes            | ❌ No         | e.g., `deepseek-chat`                      |
-| Ollama   | ❌ No             | ✅ Yes        | Server must be running locally.            |
+Restart the project when prompted.
 
----
+🤖 3. Using the Plugin (Blueprint Only)
+Open any Blueprint (e.g., Level Blueprint, Actor Blueprint).
 
-## 📂 6. Blueprint Example
+Right-click in the Event Graph and search for LLM Connect.
 
-> **Blueprint Flow**
->
-> `Begin Play` ➔ `LLM Connect Node`
->
-> Configure:
->
-> * **Model Type**: GPT
-> * **Model**: `gpt-3.5-turbo`
-> * **Prompt**: "What is the capital of France?"
-> * **API Key**: \[Your API Key]
-> * **On Success**: Connect to `Print String` using `Response Text`
+Select the node: LLM Connect – Unified LLM Request.
 
----
+⚛️ 4. Node Pin Reference
+Pin	Type	Description
+Model Type	Enum	Select the LLM service:
+• GPT (OpenAI)
+• Gemini (Google)
+• Claude (Anthropic)
+• DeepSeek
+• Ollama (local)
+• LM Studio
+Model	String	The model to use.
+Examples:
+• gpt-4, gpt-3.5-turbo (GPT)
+• gemini-pro, gemini-1.5-flash, gemini-1.5-pro (Gemini)
+• claude-3-opus, claude-3-sonnet (Claude)
+• deepseek-chat, deepseek-coder (DeepSeek)
+• llama3, mistral, etc. (Ollama)
+• lmstudio-chat (LM Studio)
+API Key	String	API key required for GPT, Gemini, Claude, and DeepSeek.
+Prompt	String	The question to send to the LLM.
+Server IP/Port	String	For Ollama and LM Studio only. Example: http://localhost:11434.
+Max Tokens	Integer	Used with Claude to limit response length.
+Temperature	Float	(0.0 to 1.0) Controls randomness.
+System Prompt	String	Optional role description (e.g., "You are a helpful assistant.").
+On Success	Exec	Triggered when a response is received.
+Response Text	String	The LLM's returned message.
+Standard Exec Output	Exec	Normal flow output.
 
-## 💡 7. Additional Notes
+📈 5. API Behavior Table
+Model	Requires API Key	Needs Server	Notes
+GPT	✅ Yes	❌ No	e.g., gpt-3.5-turbo, gpt-4
+Gemini	✅ Yes	❌ No	e.g., gemini-1.5-flash, gemini-1.5-pro
+Claude	✅ Yes	❌ No	Needs Max Tokens
+DeepSeek	✅ Yes	❌ No	e.g., deepseek-chat
+Ollama	❌ No	✅ Yes	Server must be running locally.
+LM Studio	❌ No	✅ Yes	Server must be running locally.
 
-* Ollama requires local installation and model setup.
-* Ollama does **not** use API Keys.
-* Other LLMs require **valid API Keys** for access.
-* All config data is runtime-only – nothing is saved.
-* Full source code is included.
+📂 6. Blueprint Example
+Blueprint Flow
 
----
+Begin Play ➔ LLM Connect Node
 
-## ⚖️ 8. Support & Documentation
+Configure:
 
-* GitHub: [https://github.com/yigit-altun-rootrootq/LLM-Connect](https://github.com/yigit-altun-rootrootq/LLM-Connect)
-* Contact: [https://www.youtube.com/@rootrootQ](https://www.youtube.com/@rootrootQ)
+Model Type: GPT
 
----
+Model: gpt-3.5-turbo
+
+Prompt: "What is the capital of France?"
+
+API Key: [Your API Key]
+
+On Success: Connect to Print String using Response Text
+
+💡 7. Additional Notes
+Ollama requires local installation and model setup.
+
+LM Studio requires local installation and model setup.
+
+Ollama and LM Studio do not use API Keys.
+
+Other LLMs require valid API Keys for access.
+
+All config data is runtime-only – nothing is saved.
+
+Full source code is included.
+
+⚖️ 8. Support & Documentation
+GitHub: https://github.com/yigit-altun-rootrootq/LLM-Connect
+
+Contact: https://www.youtube.com/@rootrootQ
 
 © LLM Connect Plugin - 2025. All Rights Reserved.
